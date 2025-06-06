@@ -1,0 +1,48 @@
+{% extends 'template.html' %}
+
+{% block conteudo %}
+<h1>Produtos</h1>
+<a class="btn" href="{% url 'cadastrar_produto' %}">Cadastrar Novo Produto</a>
+
+<h2>Produtos do Banco de Dados</h2>
+{% if produtos_db %}
+  <div class="produtos-container">
+    {% for prod in produtos_db %}
+      <div class="produto-card">
+        {% if prod.foto %}
+          <img src="{{ prod.foto.url }}" alt="{{ prod.nome }}">
+        {% endif %}
+        <h2>{{ prod.nome }}</h2>
+        <p>{{ prod.descricao }}</p>
+        <p><strong>Preço:</strong> R$ {{ prod.preco }}</p>
+        <p><strong>Estoque:</strong> {{ prod.estoque }}</p>
+        {% if prod.categoria %}
+          <p><strong>Categoria:</strong> {{ prod.categoria.nome }}</p>
+        {% endif %}
+        <a href="{% url 'editar_produto' prod.pk %}" class="btn btn-editar">Editar</a>
+        <a href="{% url 'excluir_produto' prod.pk %}" class="btn btn-excluir">Excluir</a>
+        <a href="{% url 'checkout' prod.pk %}" class="btn btn-comprar">Comprar</a>
+      </div>
+    {% endfor %}
+  </div>
+{% else %}
+  <p>Nenhum produto cadastrado.</p>
+{% endif %}
+
+<h2>Produtos da API Fake</h2>
+{% if produtos_api %}
+  <div class="produtos-container">
+    {% for prod in produtos_api %}
+      <div class="produto-card">
+        <img src="{{ prod.image }}" alt="{{ prod.title }}">
+        <h2>{{ prod.title }}</h2>
+        <p>{{ prod.description|truncatechars:150 }}</p>
+        <p><strong>Preço:</strong> ${{ prod.price }}</p>
+      </div>
+    {% endfor %}
+  </div>
+{% else %}
+  <p>Não foi possível carregar os produtos da API.</p>
+{% endif %}
+
+{% endblock %}

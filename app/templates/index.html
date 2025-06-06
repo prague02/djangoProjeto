@@ -1,0 +1,22 @@
+{% extends "template.html" %}
+
+{% block titulo %}Home{% endblock %}
+
+{# O nome do bloco DEVE ser "conteudo" para funcionar com o seu template.html #}
+{% block conteudo %}
+    
+    {# Usando o home-container que já estilizamos para deixar o visual incrível #}
+    <div class="home-container">
+
+        <h1>Bem-vindo ao Meu Site!</h1>
+
+        <p>Conheça nossos produtos e serviços de alta qualidade.</p>
+
+        {# Usando a classe "btn-nav" que já existe no seu CSS para o botão azul #}
+        <a href="{% url 'addUsuario' %}" class="btn-nav">
+            <i class="fa-solid fa-rocket"></i> Cadastre-se
+        </a>
+        
+    </div>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'template.html' %}
+
+{% block conteudo %}
+<h1>Checkout</h1>
+
+<h2>Produto: {{ produto.nome }}</h2>
+<img src="{{ produto.foto.url }}" width="150px">
+<p><strong>Preço:</strong> R$ {{ produto.preco }}</p>
+
+<h3>Usuário: {{ usuario.username }}</h3>
+
+<form method="post">
+  {% csrf_token %}
+  <label>Número do Cartão</label>
+  <input type="text" name="numero_cartao" required><br><br>
+
+  <label>Validade</label>
+  <input type="text" name="validade" placeholder="MM/AA" required><br><br>
+
+  <label>CVV</label>
+  <input type="text" name="cvv" required><br><br>
+
+  <button type="submit" class="btn">Finalizar Compra</button>
+</form>
+<script>
+document.querySelector('form').addEventListener('submit', function (e) {
+  const numero = document.querySelector('input[name="numero_cartao"]').value.trim();
+  const validade = document.querySelector('input[name="validade"]').value.trim();
+  const cvv = document.querySelector('input[name="cvv"]').value.trim();
+
+  const numeroRegex = /^\d{16}$/;           // 16 dígitos
+  const validadeRegex = /^(0[1-9]|1[0-2])\/\d{2}$/; // MM/AA
+  const cvvRegex = /^\d{3}$/;               // 3 dígitos
+
+  if (!numeroRegex.test(numero)) {
+    alert("Número do cartão inválido. Use 16 dígitos.");
+    e.preventDefault();
+    return;
+  }
+
+  if (!validadeRegex.test(validade)) {
+    alert("Data de validade inválida. Use o formato MM/AA.");
+    e.preventDefault();
+    return;
+  }
+
+  if (!cvvRegex.test(cvv)) {
+    alert("CVV inválido. Use 3 dígitos.");
+    e.preventDefault();
+    return;
+  }
+
+  // Opcional: checar se o cartão está vencido
+  const [mes, ano] = validade.split('/');
+  const hoje = new Date();
+  const dataValidade = new Date(`20${ano}`, mes); // Assume "25" vira "2025"
+  if (dataValidade < hoje) {
+    alert("O cartão está vencido.");
+    e.preventDefault();
+  }
+});
+</script>
+{% endblock %}

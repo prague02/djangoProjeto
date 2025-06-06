@@ -1,0 +1,21 @@
+{% extends "template.html" %}
+
+{% block titulo %}
+  Dashboard
+{% endblock %}
+
+{% block conteudo %}
+  <div class="dashboard-container">
+    <h1>Bem-vindo(a), {{ email }}</h1>
+
+    <div class="dashboard-links">
+      <a href="{% url 'cadastrar_produto' %}" class="dashboard-card">📦 Cadastrar Produto</a>
+      <a href="{% url 'listar_produtos' %}" class="dashboard-card">📋 Listar Produtos</a>
+      <a href="{% url 'exibirUsuarios' %}" class="dashboard-card">👥 Listar Usuários</a>
+      <a href="{% url 'grafico' %}" class="dashboard-card">📊 Gráfico de Estoque</a>
+      
+      {# ITEM CORRIGIDO: Agora é um link <a> com a classe e um ícone #}
+      <a href="{% url 'grafico_vendas' %}" class="dashboard-card">📈 Gráfico de Vendas</a>
+    </div>
+  </div>
+{% endblock %}

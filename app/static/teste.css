@@ -1,0 +1,1238 @@
+/* CSS Aprimorado para LinkedIn - Estilo Apple */
+
+/* Base Styles */
+:root {
+  --primary-color: #0077B5; /* LinkedIn blue */
+  --secondary-color: #000000;
+  --accent-color: #0A66C2;
+  --light-gray: #f5f5f7;
+  --medium-gray: #86888a;
+  --dark-gray: #1d1d1f;
+  --white: #ffffff;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  color: var(--dark-gray);
+  line-height: 1.5;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Centraliza todo o conteúdo */
+}
+
+main {
+  flex: 1;
+  margin-top: 70px;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Centraliza todo o conteúdo */
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+  /* Centraliza o texto */
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 36px;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-size: 28px;
+  line-height: 1.3;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 17px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Navbar */
+/*
+=====================================================
+2. BARRA DE NAVEGAÇÃO (NAVBAR) - VERSÃO "BONITÃO"
+=====================================================
+*/
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/*
+=====================================================
+ESTILOS APRIMORADOS PARA A PÁGINA "HOME" (SEÇÃO HERO)
+=====================================================
+*/
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* ESTA É A LINHA MÁGICA que centraliza tudo horizontalmente */
+  text-align: center;
+  width: 100%;
+  min-height: calc(100vh - 140px);
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf3 100%);
+}
+
+/* O resto dos estilos para h1, p, etc. permanece o mesmo */
+.home-container h1 {
+  font-size: 62px;
+  font-weight: 700;
+  color: var(--dark-gray);
+  letter-spacing: -1.5px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.home-container p {
+  font-size: 20px;
+  color: var(--medium-gray);
+  max-width: 600px;
+  margin-top: 15px;
+  line-height: 1.6;
+}
+
+.home-container .btn-nav {
+  margin-top: 35px;
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(0, 119, 181, 0.25);
+  transform: scale(1.05);
+}
+
+.home-container .btn-nav:hover {
+    box-shadow: 0 10px 25px rgba(0, 119, 181, 0.35);
+    transform: scale(1.08) translateY(-3px);
+}
+
+.home-container .btn-nav i {
+  margin-right: 10px;
+  font-size: 16px;
+}
+/*
+=====================================================
+2. BARRA DE NAVEGAÇÃO (NAVBAR) - VERSÃO FINAL CORRIGIDA
+=====================================================
+*/
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Alinha logo na esquerda e botões na direita */
+  align-items: center;
+  padding: 0 5%;
+  height: 70px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  transition: all 0.3s ease;
+}
+
+.navbar .logo {
+  font-size: 24px;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Centraliza os links de navegação de forma inteligente */
+.nav-links {
+  list-style: none;
+  display: flex;
+  position: absolute; /* Truque para centralização perfeita */
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 10px;
+}
+
+.nav-links a {
+  color: var(--dark-gray);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Container para os botões da direita, garantindo que fiquem juntos */
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Botão principal (Entrar, Logout, etc.) */
+.btn-nav {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 10px 24px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 500;
+  font-size: 15px;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-nav:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 119, 181, 0.2);
+}
+
+/* Links secundários (Dashboard) */
+.link-nav {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.link-nav:hover {
+    filter: brightness(1.2);
+}
+
+/* Login/Logout Buttons */
+/*
+==============================================
+ESTILOS PARA A PÁGINA DE LOGIN
+==============================================
+*/
+
+/* Container que cria o "card" branco no centro da página */
+.login-container-page {
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 30px;
+  margin: 60px auto;
+  background-color: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Estilo para o título "Login" */
+.login-container-page h1 {
+  margin-bottom: 30px;
+  font-size: 36px;
+  color: var(--dark-gray);
+}
+
+/* Estilos para os campos do formulário gerados pelo {{ form.as_p }} */
+.login-container-page form p {
+  text-align: left;
+  margin-bottom: 20px;
+}
+.login-container-page form label {
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+.login-container-page form input[type="email"],
+.login-container-page form input[type="password"],
+.login-container-page form input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+}
+.login-container-page form input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 119, 181, 0.2);
+    background-color: var(--white);
+}
+
+
+/*
+----------------------------------------------
+BOTÃO DE LOGIN SOFISTICADO (Sua solicitação)
+----------------------------------------------
+*/
+.btn-login-submit {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 15px; /* Espaço acima do botão */
+  box-shadow: 0 5px 15px rgba(0, 119, 181, 0.25);
+}
+
+.btn-login-submit:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 119, 181, 0.35);
+  filter: brightness(1.1); /* Deixa o botão um pouco mais "vivo" no hover */
+}
+
+/* Estilo para o link "Cadastre-se" */
+.login-container-page > p {
+    margin-top: 30px;
+}
+.login-container-page > p a {
+    color: var(--primary-color);
+    font-weight: 500;
+    text-decoration: none;
+}
+.login-container-page > p a:hover {
+    text-decoration: underline;
+}
+/*
+==============================================
+ESTILOS ATUALIZADOS PARA A PÁGINA "QUEM SOMOS"
+==============================================
+*/
+
+/*
+=====================================================
+ESTILOS CORRIGIDOS E FINAIS PARA A PÁGINA "QUEM SOMOS"
+=====================================================
+*/
+.quem-somos-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 50px 40px;
+  background-color: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.quem-somos-container p {
+  font-size: 18px;
+  color: var(--medium-gray);
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto 20px;
+}
+
+.quem-somos-container h2 {
+  margin-top: 50px;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+}
+
+.quem-somos-container h2::after {
+  content: '';
+  position: absolute;
+  width: 70px;
+  height: 3px;
+  background-color: var(--primary-color);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* Lista de contatos */
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza os itens da lista horizontalmente */
+  gap: 15px;
+}
+
+/* Itens da lista de contato */
+.contact-list li {
+  display: flex;
+  align-items: center;
+  /* A linha "width: 100%;" foi REMOVIDA para permitir a centralização */
+  max-width: 450px;
+  padding: 15px 25px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  text-align: left;
+  transition: var(--transition);
+  border: 1px solid #f0f0f0;
+}
+
+.contact-list li:hover {
+  transform: translateY(-5px) scale(1.02);
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 20px rgba(0, 119, 181, 0.1);
+  background-color: var(--white);
+}
+
+.contact-list li i {
+  font-size: 20px;
+  color: var(--primary-color);
+  margin-right: 15px;
+  width: 25px;
+  text-align: center;
+}
+
+.contact-list li strong {
+  color: var(--dark-gray);
+  margin-right: 8px;
+  font-weight: 500;
+}
+
+.contact-list li a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-list li a:hover {
+  text-decoration: underline;
+  color: var(--accent-color);
+}
+
+.contact-list li span {
+  color: var(--dark-gray);
+  font-weight: 500;
+}
+/* NOVO: Estilo para os ícones */
+.contact-list li i {
+  font-size: 20px;
+  color: var(--primary-color);
+  margin-right: 15px; /* Espaço entre o ícone e o texto */
+  width: 25px; /* Garante alinhamento consistente */
+  text-align: center;
+}
+
+.contact-list li strong {
+  color: var(--dark-gray);
+  margin-right: 8px;
+  font-weight: 500;
+}
+
+.contact-list li a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-list li a:hover {
+  text-decoration: underline;
+  color: var(--accent-color);
+}
+
+/* Para o texto do telefone que não é um link */
+.contact-list li span {
+  color: var(--dark-gray);
+  font-weight: 500;
+}
+
+/* DASHBOARD/BOAS-VINDAS - CORRIGIDO E CENTRALIZADO */
+.dashboard-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 70px;
+  /* Espaço para a navbar */
+  text-align: center;
+}
+
+.dashboard {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  min-height: calc(100vh - 70px);
+  background-color: #f9fafc;
+  margin: 0 auto;
+}
+
+.sidebar {
+  width: 260px;
+  background-color: var(--dark-gray);
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  height: 100vh;
+  z-index: 100;
+}
+
+.sidebar-header {
+  padding: 0 20px 20px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+}
+
+.sidebar-header .logo {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.sidebar-menu {
+  list-style: none;
+  margin: 30px 0;
+  width: 100%;
+  text-align: center;
+}
+
+.sidebar-menu li {
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.sidebar-menu a {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: var(--medium-gray);
+  text-decoration: none;
+  transition: var(--transition);
+  font-weight: 500;
+  width: 100%;
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu a.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+}
+
+.sidebar-menu a i,
+.sidebar-menu a svg {
+  margin-right: 12px;
+  width: 20px;
+  text-align: center;
+}
+
+.dashboard-content {
+  flex: 1;
+  margin-left: 260px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% - 260px);
+}
+
+.dashboard-content-inner {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*
+==============================================
+ESTILOS PARA A PÁGINA DASHBOARD
+==============================================
+*/
+
+/* Container principal da página do dashboard */
+.dashboard-container {
+  width: 100%;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.dashboard-container h1 {
+  font-size: 36px;
+  margin-bottom: 50px; /* Aumenta o espaço abaixo do título */
+}
+
+/* A MÁGICA ACONTECE AQUI: O container dos cards */
+.dashboard-links {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os cards quebrem a linha */
+  justify-content: center; /* <<< CENTRALIZA OS CARDS HORIZONTALMENTE */
+  gap: 25px; /* Espaçamento entre os cards */
+  max-width: 1200px;
+  margin: 0 auto; /* Garante que o container em si fique no centro */
+}
+
+/* Estilo de cada card/botão do dashboard */
+.dashboard-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white);
+  color: var(--dark-gray);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  
+  padding: 25px 30px;
+  border-radius: 16px;
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  
+  min-width: 250px; /* Largura mínima para cada card */
+  transition: var(--transition);
+}
+
+.dashboard-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* Login Page */
+.login-page {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 40px 20px;
+  width: 100%;
+}
+
+.login-container {
+  max-width: 400px;
+  width: 100%;
+  background-color: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.login-header {
+  background-color: var(--primary-color);
+  padding: 30px;
+  text-align: center;
+}
+
+.login-header h2 {
+  color: var(--white);
+  margin: 0;
+  font-size: 28px;
+}
+
+.login-body {
+  padding: 40px 30px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--dark-gray);
+  font-size: 14px;
+  text-align: left;
+}
+
+.form-control {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: var(--transition);
+  background-color: #f9f9f9;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 119, 181, 0.2);
+  background-color: var(--white);
+}
+
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+}
+
+.remember-me input {
+  margin-right: 8px;
+}
+
+.forgot-password {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--primary-color); /* CORRIGIDO: Usando variável do tema */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-btn:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+.login-footer {
+  text-align: center;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #eaeaea;
+}
+
+.login-footer p {
+  margin-bottom: 10px;
+  color: var(--medium-gray);
+}
+
+.login-footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.social-login {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.social-login p {
+  margin-bottom: 15px;
+  color: var(--medium-gray);
+  position: relative;
+}
+
+.social-login p::before,
+.social-login p::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 30%;
+  height: 1px;
+  background-color: #eaeaea;
+}
+
+.social-login p::before {
+  left: 0;
+}
+
+.social-login p::after {
+  right: 0;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #1d43db;
+  background-color: var(--white);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.social-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--white);
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+th, td {
+  padding: 16px 20px;
+  text-align: center;
+  /* Centraliza o conteúdo da tabela */
+  border-bottom: 1px solid #f1f1f1;
+}
+
+th {
+  background-color: #f9f9f9;
+  font-weight: 600;
+  color: var(--dark-gray);
+}
+
+tr:hover {
+  background-color: #f9fafc;
+}
+
+/* Product Styles */
+.produtos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin: 40px auto;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.produto-card {
+  background-color: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+}
+
+.produto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.produto-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.produto-info {
+  padding: 24px;
+  text-align: center;
+}
+
+.produto-card h2 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.produto-card p {
+  color: var(--medium-gray);
+  margin-bottom: 16px;
+}
+
+.produto-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Buttons - TODOS CENTRALIZADOS */
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.btn-editar {
+  background-color: #f5a623;
+  color: var(--white);
+}
+
+.btn-editar:hover {
+  background-color: #e09612;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(245, 166, 35, 0.3);
+}
+
+.btn-excluir {
+  background-color: #ff3b30;
+  color: var(--white);
+}
+
+.btn-excluir:hover {
+  background-color: #e0352b;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 59, 48, 0.3);
+}
+
+.btn-cancelar {
+  background-color: var(--medium-gray);
+  color: var(--white);
+}
+
+.btn-cancelar:hover {
+  background-color: #6e7072;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(134, 136, 138, 0.3);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 119, 181, 0.3);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(0, 119, 181, 0.1);
+  transform: translateY(-3px);
+}
+
+/* Forms */
+form {
+  background-color: var(--white);
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+form h2 {
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+}
+
+form h2:after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary-color);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form input[type="password"],
+form textarea,
+form input[type="file"] {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: var(--transition);
+  background-color: #f9f9f9;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 119, 181, 0.2);
+  background-color: var(--white);
+}
+
+form button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  display: block;
+  margin: 10px auto 0;
+}
+
+form button:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 119, 181, 0.3);
+}
+
+/* Footer */
+footer {
+  background-color: var(--dark-gray);
+  color: var(--white);
+  padding: 60px 5% 30px;
+  text-align: center;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.footer-column {
+  width: 100%;
+  max-width: 250px;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-column h3::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 2px;
+  background-color: var(--primary-color);
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column a {
+  color: var(--medium-gray);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-column a:hover {
+  color: var(--white);
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  color: var(--medium-gray);
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .dashboard {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .dashboard-content {
+    margin-left: 0;
+    width: 100%;
+  }
+  .history-timeline:before {
+    left: 20px;
+  }
+  .timeline-item:nth-child(odd) .timeline-content,
+  .timeline-item:nth-child(even) .timeline-content {
+    width: 85%;
+    margin-left: 60px;
+    margin-right: 0;
+  }
+  .timeline-item:nth-child(odd) .timeline-content:before,
+  .timeline-item:nth-child(even) .timeline-content:before {
+    left: -40px;
+    right: auto;
+  }
+  .timeline-item:nth-child(odd) .timeline-year,
+  .timeline-item:nth-child(even) .timeline-year {
+    left: -60px;
+    right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 16px;
+  }
+  .nav-links {
+    display: none;
+  }
+  .hero h1 {
+    font-size: 36px;
+  }
+  .hero p {
+    font-size: 18px;
+  }
+  .dashboard-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+  .stat-card {
+    max-width: 100%;
+  }
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .timeline-item:nth-child(odd) .timeline-content,
+  .timeline-item:nth-child(even) .timeline-content {
+    width: 80%;
+  }
+  .timeline-year {
+    display: none;
+  }
+}
+
+/* Mobile Menu */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block;
+  }
+  .mobile-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: none;
+    text-align: center;
+  }
+  .mobile-menu.active {
+    display: block;
+  }
+  .mobile-menu ul {
+    list-style: none;
+  }
+  .mobile-menu li {
+    margin-bottom: 15px;
+  }
+  .mobile-menu a {
+    color: var(--dark-gray);
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px 0;
+  }
+}
+
+/* Utilitários para centralização */
+.text-center {
+  text-align: center;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
